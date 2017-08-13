@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html style="font-size: 46.875px;">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="图加是动态图集的社交平台,提供强大的图片搜索与图片直播功能" />
+        <meta name="keywords" content="图片搜索与图片直播" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="telephone=no" name="format-detection" />
+        <meta content="email=no" name="format-detection" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript">
+        if (navigator.userAgent.match(/(iPhone|iPod|Android|ios|Mobile|Linux)/i)) {
+            ! function(a) {
+                function b() {
+                    a.rem = f.getBoundingClientRect().width / 16, f.style.fontSize = a.rem + "px"
+                }
+                var c, d = a.navigator.appVersion.match(/iphone/gi) ? a.devicePixelRatio : 1,
+                    e = 1 / d,
+                    f = document.documentElement,
+                    g = document.createElement("meta");
+                if (a.dpr = d, a.addEventListener("resize", function() {
+                        clearTimeout(c), c = setTimeout(b, 300)
+                    }, !1), a.addEventListener("pageshow", function(a) {
+                        a.persisted && (clearTimeout(c), c = setTimeout(b, 300))
+                    }, !1), f.setAttribute("data-dpr", d), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + e + ", maximum-scale=" + e + ", minimum-scale=" + e + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+                else {
+                    var h = document.createElement("div");
+                    h.appendChild(g), document.write(h.innerHTML)
+                }
+                b()
+            }(window);
+        } else {
+            document.write('<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no">');
+            var f = document.documentElement;
+            f.style.fontSize = "40px";
+            f.setAttribute("data-dpr", '2');
+        }
+        </script>
+        {{{_sections.head}}}
+    </head>
+    <body id="body">
+	    <div class="container">
+		    {{{body}}}
+	    </div>
+        <script src="libs/zepto.min.js"></script>
+    	{{{_sections.jscodelink}}}
+    </body>
+</html>

@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2016-09-22 15:57:42
+ * @version $Id$
+ */
+
+@import "../../unit/common/less/common";
+@import "../../unit/common/less/components/keyframe";
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background: -webkit-linear-gradient(top, #c6dde4, #fefeff);
+    background: -moz-linear-gradient(top, #c6dde4, #fefeff);
+    background: -o-linear-gradient(top, #c6dde4, #fefeff);
+    background: -ms-linear-gradient(top, #c6dde4, #fefeff);
+    background: linear-gradient(to bottom, #c6dde4, #fefeff);
+}
+
+.login-wrapper {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    width: 360px;
+    height: 440px;
+    box-sizing: border-box;
+    margin: -220px 0 0 -180px;
+}
+
+.form {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 22px 26px 26px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(ellipse at top, rgba(255, 255, 255, 1) 0%, rgba(250, 223, 154, 0.4) 100%);
+}
+
+.form-title {
+    width: 100%;
+    height: 20px;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.form p {
+    width: 100%;
+    height: 32px;
+    margin-top: 16px;
+    text-align: left;
+    &.remember-box {
+        height: 20px;
+        margin-top: 12px;
+    }
+}
+
+.remember-label {
+    line-height: 19px;
+    vertical-align: top;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid rgba(66, 66, 66, .3);
+    border-radius: 3px;
+    box-sizing: border-box;
+    &.remember {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+    }
+}
+
+.form input[type="submit"],
+.form input[type="button"] {
+    color: #fff;
+    cursor: pointer;
+    background-image: linear-gradient(rgba(76, 130, 255,.6), rgba(76, 160, 255, .9));
+    background-size: auto 200%;
+    background-position: 0 100%;
+    transition: background-position 1s;
+}
+
+.form input[type="submit"]:hover,
+.form input[type="button"]:hover {
+    background-position: 0 0;
+}
+
+.logo {
+    display: block;
+    width: 131px;
+    height: 120px;
+    margin: 0 auto 40px;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    animation: sign 6s ease-in-out infinite;
+}
+
+.loginhelp {
+    max-width: 28rem;
+    margin: 12px auto 0;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.loginhelp a {
+    color: #666;
+}
+
+.loginhelp a:first-child {
+    float: left;
+}
+
+.loginhelp a:last-child {
+    float: right;
+}
+
+.loading:after {
+    overflow: hidden;
+    font-size: 30px;
+    color: #F00;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis .6s infinite;
+    content: "\2026"; /* ascii code for the ellipsis character */
+}
+
+@keyframes ellipsis {    
+    from {
+        width: 2px;
+    }
+    to {
+        width: 60px;
+    }
+}
+
+.footer-copy {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    text-align: center;
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-image: url(//cdn.tinypng.com/images/grass.png);
+}

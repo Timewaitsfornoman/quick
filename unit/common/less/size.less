@@ -1,0 +1,47 @@
+// @desc 提供 750px尺寸的尺寸 （包括字体大小）的一些常用方法为什么不使用rem设置字体,参见 https://github.com/imweb/mobile/issues/3
+
+@psdSize: 46.875;
+
+.pxtopx(@name, @px){
+    @{name}: round(@px / 2) * 1px;
+    [data-dpr="2"] & {
+        @{name}: @px * 1px;
+    }
+    // for mx3
+    [data-dpr="2.5"] & {
+        @{name}: round(@px * 2.5 / 2) * 1px;
+    }
+    // for 小米note
+    [data-dpr="2.75"] & {
+        @{name}: round(@px * 2.75 / 2) * 1px;
+    }
+    [data-dpr="3"] & {
+        @{name}: round(@px / 2 * 3) * 1px
+    }
+    // for 三星note4
+    [data-dpr="4"] & {
+        @{name}: @px * 2px;
+    }
+}
+
+.pxtorem(@name, @px) {
+    @{name}: (@px / @psdSize) * 1rem;
+}
+
+
+.fontSize(@px) {
+    .pxtopx(font-size, @px);
+}
+
+.lineHight(@px) {
+    .pxtopx(line-height, @px);
+}
+
+
+.settwoside(@name, @px, @py) {
+    @{name}: (@px / @psdSize) * 1rem (@py / @psdSize) * 1rem;
+}
+
+.setfourside(@name, @px, @py, @pz, @ph) {
+    @{name}: (@px / @psdSize) * 1rem (@py / @psdSize) * 1rem (@pz / @psdSize) * 1rem (@ph / @psdSize) * 1rem;
+}

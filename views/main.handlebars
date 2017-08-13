@@ -1,0 +1,32 @@
+{{#section 'head'}}
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+{{/section}}
+<header id="header" class="main-header">
+  <p class="search">
+    <input class="search-content" type="text" name="search" value="" placeHolder="大家都在搜"/>
+    <button class="search-button" type="button"></button>
+  </p>
+</header>
+ <!--  轮播图 -->
+<section id="J_slider" class="slider"></section>
+
+<section class="main-content">
+    <ul id="J_navheader" class="header-nav">
+        <li class="nav-current"><span class="J_item">推存</span></li>
+        <li><span class="J_item">娱乐</span></li>
+        <li><span class="J_item">时尚</span></li>
+        <li><span class="J_item">旅游</span></li>
+        <li><span class="J_item">生活</span></li>
+    </ul>
+    <section id="J_content" class="main-list">
+       <ul id="J-tuicun" class="list-items"></ul>
+       <ul id="J-yule" class="list-items hide"></ul>
+       <ul id="J-shishang" class="list-items hide"></ul>
+       <ul id="J-lvyou" class="list-items hide"></ul>
+       <ul id="J-shenghuo" class="list-items hide"></ul>
+    </section>
+</section>
+
+{{#section 'jscodelink'}}
+    <script type="text/javascript" src="js/main.js"></script>
+{{/section}}

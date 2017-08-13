@@ -1,0 +1,59 @@
+// @desc    slider 轮播
+// @author  王玉林 <veryued@gmail.com>
+// @date    2014-08-06
+
+.slider(@w, @h){
+
+  .slider-outer {
+    width: @w;
+    height: @h;
+    overflow: hidden;
+    position: relative;
+
+    .slider-wrap{
+      position: absolute;
+      height: 100%;
+
+      li{
+        float: left;
+        width: @w;
+        height: 100%;
+
+        a{
+          display: block;
+          height: 100%;
+          width: 100%;
+        }
+
+        img{
+          height: 100%;
+          width: 100%;
+          border: 0;
+        }
+      }
+    }
+  }
+
+  .slider-status{
+    height:0.5rem;
+    padding-top:0.05px;
+    text-align:center;
+
+    span{
+      display:inline-block;
+      width:0.4rem;
+      height:0.4rem;
+      background-color:#ccc;
+      -webkit-border-radius:999rem;
+      margin-right:0.4rem;
+
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+
+    .sel{
+      background-color:#ff0066;
+    }
+  }
+}

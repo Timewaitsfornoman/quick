@@ -1,0 +1,611 @@
+
+{{#section 'head'}}
+    <link rel="stylesheet" type="text/css" href="css/createpage.css">
+    <style id="globalstyle">
+        @font-face {
+            src: url(http://www.apple.com/wss/fonts/PingHei/v1/PingHei-light.woff) format("woff"),url(http://www.apple.com/wss/fonts/PingHei/v1/PingHei-light.ttf) format("truetype");
+        }
+
+        :focus,html * {
+            outline: 0;
+        }
+
+        .hidden,[class^=ads],[id^=ads] {
+            display: none!important;
+        }
+
+        sub,sup {
+            position: relative;
+        }
+
+        html {
+            color: #000;
+            background: #fff;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+            text-size-adjust: 100%;
+        }
+
+        html * {
+            -webkit-text-size-adjust: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        article,aside,blockquote,body,button,code,dd,details,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,hr,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        button,input,select,textarea {
+            font-size: 100%;
+        }
+
+        input:-ms-clear {
+            display: none;
+        }
+
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+
+        button,fieldset,img,input {
+            border: 0;
+        }
+
+        abbr,acronym {
+            border: 0;
+            font-variant: normal;
+        }
+
+        del {
+            text-decoration: line-through;
+        }
+
+        address,caption,cite,code,dfn,em,th,var {
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        ol,ul {
+            list-style: none;
+        }
+
+        caption,th {
+            text-align: left;
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            font-weight: 500;
+        }
+
+        q:after,q:before {
+            content: '';
+        }
+
+        sub,sup {
+            font-size: 75%;
+            line-height: 0;
+            vertical-align: baseline;
+        }
+
+        sup {
+            top: -.5em;
+            bottom: -.25em;
+        }
+
+        a,a:active,ins {
+            text-decoration: none;
+        }
+
+        input {
+            border-radius: 0;
+            -webkit-appearance: none;
+        }
+
+        .hidden {
+            visibility: hidden!important;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+        }
+
+        h4 {
+            font-size: .9rem;
+        }
+
+        h5 {
+            font-size: .7rem;
+        }
+
+        h6 {
+            font-size: .6rem;
+        }
+
+        iframe {
+            display: none;
+        }
+
+        body {
+            width: 100%;
+            font: 12px/1 PingHei Tahoma,Helvetica,Arial,"\5b8b\4f53",sans-serif;
+            background-color: #eff0f2;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+{{/section}}
+
+    <header class="header-wapper">
+        <article class="header-nav">
+            <h1 class="company-name">图加科技</h1>
+            <img class="logo" src="/images/logo.png" alt="logo"/>
+            <p class="user-action">
+                <a id="J_userstatus" href="javascript:;"></a>
+                <span class="line-status">|</span>
+                <a id="J_exist" href="javascript:;">退出</a>
+            </p>
+        </article>
+    </header>
+
+    <section class="J_wapper wapper-content">
+        <section class="J_newcreateheader create-style">
+            添加头部
+            <a class="J_addheader add-content" href="javascript:;">添加</a>
+        </section>
+
+        <section class="J_newcreatebody create-style">
+            添加中间部分
+            <a class="J_addboady add-content" href="javascript:;">添加</a>
+        </section>
+
+        <section class="J_newcreatefooter create-style">
+            添加尾部
+            <a class="J_addfooter add-content" href="javascript:;">添加</a>
+        </section>
+    </section>
+
+    <section class="submit-formdata">
+        <button id="J_submitDate" class="submit-btn"/>生成页面</button>
+    </section>
+
+    <div class="J_templateheader tamplate-wapper hide"></div>
+    <div class="J_templatebody tamplate-wapper tamplate-bodywapper hide"></div>
+    <div class="J_templatefooter tamplate-wapper hide"></div>
+
+    <footer class="footer-copy">图加科技@2016-09-01</footer>
+
+    {{#section 'jscodelink'}}
+
+    <script id="J_tempbanner" type="text/x-handlebars-template">
+        <a class="J_colbtn colse_button" href="javascript:;">x</a>
+        <h1 class="header-create">头部制作</h1>
+        <div class="wapper-tpl">
+            <section class="template-scroll">
+                <ul class="template-content" style="width:\{{width}}px">
+                \{{#each template}}
+                <li class="J_tempitem" data-id="\{{id}}" data-html="\{{html}}" data-css="\{{css}}" data-js="\{{js}}">
+                    <img class="temp-bannerimg" src="\{{review_link}}" alt="模板"/>
+                </li>
+                \{{/each}} 
+                </ul>
+            </section>
+        </div>
+    </script>
+    
+    <script id="J_blanktempheader" type="text/x-handlebars-template">
+        <section class="tamplate-wapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">头部制作</h1>
+                <ul class="create-lists">
+                    <form action="/updatepage" method="post">
+                        <li>
+                            <label for="J_picbanner">请输入bannerd图片的地址</label>
+                            <input id="J_picbanner" class="Banner-width" type="text" name="banner_img" />
+                        </li>
+                        <li>
+                            <label for="J_headertitle">请输入标题</label>
+                            <input id="J_headertitle" class="Banner-width" type="text" name="headertitle" />
+                        </li>
+                        <li>
+                            <label for="J_headsubtitle">请输入副标题</label>
+                            <input id="J_headsubtitle" class="Banner-width" type="text" name="subheadtitle" />
+                        </li>
+                        <li>
+                            <label for="J_paragraph" tag="1">段落一</label>
+                            <input id="J_paragraph" class="Banner-width" type="text" name="paragraph" />
+                        </li>
+                        <li>
+                            <label for="J_paragraphtwo" tag="2">段落 二</label>
+                            <input id="J_paragraphtwo" class="Banner-width" type="text" name="paragraphtwo" />
+                        </li>
+                        <li>
+                            <input id="J_submitbanner" class="submit-banner" type="submit" value="创建"/>
+                        </li>
+                    </form>
+                </ul>
+            </section>
+        </section>
+    </script>
+
+    <script id="J_blanktempheadertwo" type="text/x-handlebars-template">
+        <section class="tamplate-wapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">头部制作</h1>
+                <ul class="create-lists">
+                    <form action="/updatepage" method="post">
+                        <li>
+                            <label for="J_picbanner">请输入bannerd图片的地址</label>
+                            <input id="J_picbanner" class="Banner-width" type="text" name="banner_img" />
+                        </li>
+                        <li>
+                            <label for="J_headertitle">请输入标题</label>
+                            <input id="J_headertitle" class="Banner-width" type="text" name="headertitle" />
+                        </li>
+                        <li>
+                            <label for="J_headsubtitle">请输入第一排文案</label>
+                            <input id="J_headsubtitle" class="Banner-width" type="text" name="subheadtitle" />
+                        </li>
+                        <li>
+                            <label for="J_paragraph" tag="1">请输入第二排文案</label>
+                            <input id="J_paragraph" class="Banner-width" type="text" name="paragraph" />
+                        </li>
+                        <li>
+                            <label for="J_paragraphtwo" tag="2">请输入第三排文案</label>
+                            <input id="J_paragraphtwo" class="Banner-width" type="text" name="paragraphtwo" />
+                        </li>
+                        <li>
+                            <input id="J_submitbanner" class="submit-banner" type="submit" value="创建"/>
+                        </li>
+                    </form>
+                </ul>
+            </section>
+        </section>
+    </script>
+
+    <script id="J_blanktempheaderthree" type="text/x-handlebars-template">
+        <section class="tamplate-wapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">头部制作</h1>
+                <ul class="create-lists">
+                    <form action="/updatepage" method="post">
+                        <li>
+                            <label for="J_picbanner">请输入bannerd图片的地址</label>
+                            <input id="J_picbanner" class="Banner-width" type="text" name="banner_img" />
+                        </li>
+                        <li>
+                            <label for="J_headertitle">请输入标题</label>
+                            <input id="J_headertitle" class="Banner-width" type="text" name="headertitle" />
+                        </li>
+                        <li>
+                            <label for="J_headsubtitle">请输入文案</label>
+                            <input id="J_headsubtitle" class="Banner-width" type="text" name="subheadtitle" />
+                        </li>
+                        <li>
+                            <input id="J_submitbanner" class="submit-banner" type="submit" value="创建"/>
+                        </li>
+                    </form>
+                </ul>
+            </section>
+        </section>
+    </script>
+
+     <script id="J_blanktempheaderfour" type="text/x-handlebars-template">
+        <section class="tamplate-wapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">头部制作</h1>
+                <ul class="create-lists">
+                    <form action="/updatepage" method="post">
+                        <li>
+                            <label for="J_picbanner">请输入bannerd图片的地址</label>
+                            <input id="J_picbanner" class="Banner-width" type="text" name="banner_img" />
+                        </li>
+                        <li>
+                            <label for="J_headertitle">请输入标题</label>
+                            <input id="J_headertitle" class="Banner-width" type="text" name="headertitle" />
+                        </li>
+                        <li>
+                            <label for="J_headsubtitle">请输入副标题</label>
+                            <input id="J_headsubtitle" class="Banner-width" type="text" name="subheadtitle" />
+                        </li>
+                        <li>
+                            <label for="J_paragraph" tag="1">段落</label>
+                            <input id="J_paragraph" class="Banner-width" type="text" name="paragraph" />
+                        </li>
+                        <li>
+                            <input id="J_submitbanner" class="submit-banner" type="submit" value="创建"/>
+                        </li>
+                    </form>
+                </ul>
+            </section>
+        </section>
+    </script>
+
+
+
+    <script id="J_blanktempbody" type="text/x-handlebars-template">
+        <section class="tamplate-wapper tamplate-bodywapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">主体部分</h1>
+                <div class="body-wapper">
+                    <form action="/updatepage" method="post">
+                        <section id="J_bodyform">
+                            <ul class="J_createLists create-lists">
+                                <li>
+                                    <input class="J_mianTitile input-item" type="text" name="mian_titile" placeholder="标题"/>
+                                </li>
+                                <li>
+                                    <input class="J_describe input-item" type="text" name="describe" placeholder="描述文案"/>
+                                </li>
+                                <li class="J_altlasLists altlas-lists">
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第一张图片地址"/>
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第二张图片地址"/>
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第三张图片地址"/>
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第四张图片地址"/>
+                                    <input class="J_headertitle input-item altla-item" type="text" name="headertitle" placeholder="图片列表下段落头部小标题"/>
+                                    <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+                                </li>
+                                <li class="J_waperaltlasId">
+                                    <input class="J_altlasId input-item" type="text" name="altlas_id" placeholder="该部分对应的图集id"/>
+                                </li>
+                                <li class="add-altlas">
+                                    <input class="J_addaltlas input-item" type="button" value="继续添加图片和文案"/>
+                                </li>
+                            </ul>
+                        </section>
+                        <input class="J_addnewitem addnew-data" type="button" value="添加新单元"/>
+                        <input class="J_submitbodydata submit-data" type="submit" value="保存"/>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </script>
+
+    <script id="J_blanktembodyitem" type="text/x-handlebars-template">
+        <ul class="J_createLists create-lists">
+            <a class="J_closebodyitems close-altlaslists close" href="javascript:;">x</a>
+            <li>
+                <input class="J_mianTitile input-item" type="text" name="mian_titile" placeholder="标题"/>
+            </li>
+            <li>
+                <input class="J_describe input-item" type="text" name="describe" placeholder="描述文案"/>
+            </li>
+            <li class="altlas-lists">
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第一张图片地址"/>
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第二张图片地址"/>
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第三张图片地址"/>
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第四张图片地址"/>
+                <input class="J_headertitle input-item altla-item" type="text" name="headertitle" placeholder="图片列表下段落头部小标题"/>
+                <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+            </li>
+            <li class="J_waperaltlasId">
+                <input class="J_altlasId input-item" type="text" name="altlas_id" placeholder="该部分对应的图集id"/>
+            </li>
+            <li>
+                <input class="J_addaltlas input-item" type="button" value="继续添加图片和文案"/>
+            </li>
+        </ul>
+    </script>
+
+    <script id="J_blanktembodyitemaltlas" type="text/x-handlebars-template">
+        <li class="altlas-lists">
+            <a class="J_closealtlaslists close-altlaslists" href="javascript:;">x</a>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第一张图片地址"/>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第二张图片地址"/>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第三张图片地址"/>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第四张图片地址"/>
+            <input class="J_headertitle input-item altla-item" type="text" name="headertitle" placeholder="图片列表下段落头部小标题"/>
+            <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+        </li>
+    </script>
+
+    <script id="J_blanktempbodytwo" type="text/x-handlebars-template">
+        <section class="tamplate-wapper tamplate-bodywapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">主体部分</h1>
+                <div class="body-wapper">
+                    <form action="/updatepage" method="post">
+                        <section id="J_bodyform">
+                            <ul class="J_createLists create-lists">
+                                <li>
+                                    <input class="J_mianTitile input-item" type="text" name="mian_titile" placeholder="标题"/>
+                                </li>
+                                <li>
+                                    <input class="J_subTitile input-item" type="text" name="subtitile" placeholder="副标题"/>
+                                </li>
+                               
+                                <li>
+                                    <input class="J_describe input-item" type="text" name="describe" placeholder="描述文案"/>
+                                </li>
+                                <li class="J_altlasLists altlas-lists">
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第一张图片地址"/>
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第二张图片地址"/>
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第三张图片地址"/>
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第四张图片地址"/>
+                                    <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+                                </li>
+                                <li class="J_waperaltlasId">
+                                    <input class="J_altlasId input-item" type="text" name="altlas_id" placeholder="该部分对应的图集id"/>
+                                </li>
+                                <li class="add-altlas">
+                                    <input class="J_addaltlas input-item" type="button" value="继续添加图片和文案"/>
+                                </li>
+                            </ul>
+                        </section>
+                        <input class="J_addnewitem addnew-data" type="button" value="添加新单元"/>
+                        <input class="J_submitbodydata submit-data" type="submit" value="保存"/>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </script>
+
+    <script id="J_blanktembodyitemtwo" type="text/x-handlebars-template">
+        <ul class="J_createLists create-lists">
+            <a class="J_closebodyitems close-altlaslists close" href="javascript:;">x</a>
+            <li>
+                <input class="J_mianTitile input-item" type="text" name="mian_titile" placeholder="标题"/>
+            </li>
+            <li>
+                <input class="J_subTitile input-item" type="text" name="subtitile" placeholder="副标题"/>
+            </li>
+            <li>
+                <input class="J_describe input-item" type="text" name="describe" placeholder="描述文案"/>
+            </li>
+            <li class="altlas-lists">
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第一张图片地址"/>
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第二张图片地址"/>
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第三张图片地址"/>
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第四张图片地址"/>
+                <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+            </li>
+            <li class="J_waperaltlasId">
+                <input class="J_altlasId input-item" type="text" name="altlas_id" placeholder="该部分对应的图集id"/>
+            </li>
+            <li>
+                <input class="J_addaltlas input-item" type="button" value="继续添加图片和文案"/>
+            </li>
+        </ul>
+    </script>
+
+    <script id="J_blanktembodyitemaltlastwo" type="text/x-handlebars-template">
+        <li class="altlas-lists">
+            <a class="J_closealtlaslists close-altlaslists" href="javascript:;">x</a>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第一张图片地址"/>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第二张图片地址"/>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第三张图片地址"/>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="第四张图片地址"/>
+            <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+        </li>
+    </script>
+
+    <script id="J_blanktempbodythree" type="text/x-handlebars-template">
+        <section class="tamplate-wapper tamplate-bodywapper">
+            <a class="J_colbtn colse_button" href="javascript:;">x</a>
+            <section class="template-create">
+                <h1 class="header-create">主体部分</h1>
+                <div class="body-wapper">
+                    <form action="/updatepage" method="post">
+                        <section id="J_bodyform">
+                            <ul class="J_createLists create-lists">
+                                <li>
+                                    <input class="J_mianTitile input-item" type="text" name="mian_titile" placeholder="标题"/>
+                                </li>
+                                <li class="J_altlasLists altlas-lists">
+                                    <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="图片地址"/>
+                                </li>
+                                <li class="J_paragraphitem">
+                                   <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+                                </li>
+                                <li class="J_addpic  add-altlas">
+                                    <input class="J_addaltlas input-item" type="button" value="继续添加图片"/>
+                                </li>
+                                <li class="add-altlas paragraph">
+                                    <input class="J_addaltlasparagraph input-item" type="button" value="继续添加文案"/>
+                                </li>
+                            </ul>
+                        </section>
+                        <input class="J_addnewitem addnew-data" type="button" value="添加新单元"/>
+                        <input class="J_submitbodydata submit-data" type="submit" value="保存"/>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </script>
+
+    <script id="J_blanktembodyitemthree" type="text/x-handlebars-template">
+        <ul class="J_createLists create-lists">
+            <a class="J_closebodyitems close-altlaslists close" href="javascript:;">x</a>
+            <li>
+                <input class="J_mianTitile input-item" type="text" name="mian_titile" placeholder="标题"/>
+            </li>
+            <li class="J_altlasLists altlas-lists">
+                <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="图片地址"/>
+            </li>
+            <li class="J_paragraphitem">
+               <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+            </li>
+            <li class="J_addpic  add-altlas">
+                <input class="J_addaltlas input-item" type="button" value="继续添加图片"/>
+            </li>
+            <li class="add-altlas paragraph">
+                <input class="J_addaltlasparagraph input-item" type="button" value="继续添加文案"/>
+            </li>
+        </ul>
+    </script>
+
+    <script id="J_blanktembodyitemaltlasthree" type="text/x-handlebars-template">
+        <li class="J_altlasLists altlas-lists">
+            <a class="J_closealtlaslists close-altlaslists" href="javascript:;">x</a>
+            <input class="J_img_alink input-item altla-item" type="text" name="img_alink" placeholder="图片地址"/>
+        </li>
+    </script>
+
+    <script id="J_blanktembodyitempargraffthree" type="text/x-handlebars-template">
+        <li class="J_paragraphitem">
+            <a class="J_closealtlaslists close-altlaslists" href="javascript:;">x</a>
+            <input class="J_paragraph input-item altla-item" type="text" name="paragraph" placeholder="图片列表下的段落文案"/>
+        </li>
+    </script>
+
+    <script id="J_blankfooter" type="text/x-handlebars-template">
+        <a class="J_colbtn colse_button" href="javascript:;">x</a>
+        <ul class="J_createLists create-lists footer-display">
+
+            <li>
+                <input class="J_footerTitle input-item" type="text" name="footerTitle" placeholder="标题"/>
+            </li>
+
+            <li class="add-altlas paragraph">
+                <input class="J_savefooter input-item" type="button" value="保存"/>
+            </li>
+        </ul>
+    </script>
+
+    <script id="J_blankfootertwo" type="text/x-handlebars-template">
+        <a class="J_colbtn colse_button" href="javascript:;">x</a>
+        <ul class="J_createLists create-lists">
+
+            <li>
+                <input class="J_logoaddress input-item" type="text" name="logoaddress" placeholder="logo地址"/>
+            </li>
+
+            <li>
+                <input class="J_footerTitle input-item" type="text" name="footerTitle" placeholder="标题"/>
+            </li>
+
+            <li class="altlas-lists">
+                <input class="J_subtitlefooter input-item altla-item" type="text" name="subtitlefooter" placeholder="小副标题"/>
+            </li>
+
+            <li>
+               <input class="J_paragraphfooter input-item altla-item" type="text" name="paragraphfooter" placeholder="段落文案"/>
+            </li>
+
+            <li>
+               <input class="J_altlasid input-item altla-item" type="text" name="altlasid" placeholder="图集id"/>
+            </li>
+
+            <li class="add-altlas paragraph">
+                <input class="J_savefooter input-item" type="button" value="保存"/>
+            </li>
+        </ul>
+    </script>
+
+    <script type="text/javascript" src="libs/handlebars.min.js"></script>
+    <script type="text/javascript" src="js/createpage.js"></script>
+{{/section}}

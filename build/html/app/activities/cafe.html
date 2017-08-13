@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+<meta name="description" content="图加是动态图集的社交平台,提供强大的图片搜索与图片直播功能" />
+<meta name="keywords" content="图片搜索与图片直播" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="telephone=no" name="format-detection" />
+<meta content="email=no" name="format-detection" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<link rel="shortcut icon" type="image/x-icon" href=" http://event.tujiaapp.com//images/favicon.ico" media="screen" />
+<script type="text/javascript">
+! function(a) {
+    function b() {
+        a.rem = f.getBoundingClientRect().width / 16, f.style.fontSize = a.rem + "px"
+    }
+    var c, d = a.navigator.appVersion.match(/iphone/gi) ? a.devicePixelRatio : 1,
+        e = 1 / d,
+        f = document.documentElement,
+        g = document.createElement("meta");
+    if (a.dpr = d, a.addEventListener("resize", function() {
+            clearTimeout(c), c = setTimeout(b, 300)
+        }, !1), a.addEventListener("pageshow", function(a) {
+            a.persisted && (clearTimeout(c), c = setTimeout(b, 300))
+        }, !1), f.setAttribute("data-dpr", d), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + e + ", maximum-scale=" + e + ", minimum-scale=" + e + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g);
+    else {
+        var h = document.createElement("div");
+        h.appendChild(g), document.write(h.innerHTML)
+    }
+    b()
+}(window);
+</script>
+
+        <title>35MM Cafe</title>
+        <link rel="stylesheet" href="../../../assets/css/app/activities/cafe.css?v=75743f89b2fe192fd3aff4334f3df9fe" media="all" />
+</head>
+
+<body>
+    <section class="wapper">
+        <header class="header">
+            <img class="banner" src="http://upp.tujiamedia.com/cafe/banner.jpg" alt="这里是美丽的西塘">
+            <article class="topic-activity">
+                <h1 class="place-title">35MM Cafe</h1>
+                <h2 class="subtitle">[ 时光匆匆 人海茫茫，谢谢你，带我来到这里 ]</h2>
+                <p class="title-infor">
+                    <i class="point-header"></i>光影留痕和半时咖啡</br>
+                    <i class="point-header"></i>一半咖啡一半红茶
+                </p>
+            </article>
+        </header>
+        <section class="wapper-content">
+            <section class="J_content content-body"></section>
+        </section>
+        <div class="J_footer end-style hidden">
+            <h3 class="come-from"><i class="icon-logo"></i><span>图文来自图加摄影师 -</span> <i class="i">团子酱</i></h3>
+            <p class="foot-world">一个集美貌和文艺于一身的女子，关注图加公众号，有机会与园子酱一起去探寻杭城更多未知好店。</p>
+            <a class="J_goapp go-appbyid" data-id='930101'><i></i>进入图集</a>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALoAAAAhCAMAAABZcUFDAAAANlBMVEX///8cHioAAADW1tenqKpvcHVeX2X19fXr6+zAwMI2N0Cbm560tLaNjpF/f4NMTVTh4eLLy80eD9OGAAABTElEQVRYw+3Y62qEMBCG4fk6mqPxcP8321G3MYZQKlJMwPdPQpDl2SVqWHoyw6zpkbpS5soHAEyPhFL80v83AIXVl37upb/0SukzryQOClCj1ZRmQy+rYamULjjSIz65JflSEz71pla6VoDynVeQot1uaHnpyrKbK6X3cDuLV6Xe12cAo9mmRkFVSo9c0hMw7FOZheQi9ySd83SkHygL9D8TRTHtUNUZhuOGoSMx7j/6mWorpdvsrpXBAIrSbm+Yrz90fcPMdDTuRAt0MpzXb4AuXHnpNs3fmvuw0Gn9Bv1K9+k+l9o6H44Fep9LuRm6b5e+DtWfHMv0IX/C+GboDIyUNjVDJweY01Zvh+4Bn17VEN249IAwoCH6ph0Oua/q+AX8RqcAQA3MPExA4JboMo35B19JXTGSrAxJnPwBbMKEtZFlvq43lWae6X7fDi8KaLGNAe0AAAAASUVORK5CYII=">
+        </div>
+        <section class="J_popview pop-view">
+            <div class="J_viewwapper wapper-view">
+                <ul class="J_imgview img-view"></ul>
+            </div>
+        </section>
+    </section>
+    <script id="J_item" type="text/template">
+        {@each data as dataitem}
+        <h1 class="title"><i class="lefticon"></i><span class="subtitles">${dataitem.title}</span><i class="righticon"></i></h1>
+        <h2 class="line-throw"></h2>
+        <div class="wapper-list">
+            <ul class="J_piclist pic-list">
+                {@each dataitem.imagearray as imgitem}
+                <li class="pic-item"><img src="${imgitem}" alt="西塘"></li>
+                {@/each}
+            </ul>
+            <div class="describe">
+                {@each dataitem.describe as it}
+                <p>${it}</p>
+                {@/each}
+            </div>
+        </div>
+        {@/each}
+    </script>
+    <script type="text/javascript" src="../../../assets/libs/zepto.min.js?v=6ec1e34eceb26faf0b345bf4b15cee4c"></script>
+    <script type="text/javascript" src="../../../assets/js/app/activities/cafe.js?v=45b17a2358c3d4e30d96575317d1d462"></script>
+</body>
+
+</html>

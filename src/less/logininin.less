@@ -1,0 +1,177 @@
+@charset "utf-8";
+@import "../../unit/common/less/common.less";
+
+html,body,.container,.login-wrapper{
+	min-height: 100%;
+	height: 100%;
+}
+.container>.login-wrapper{
+	height: auto;
+}
+.login-wrapper{
+	.pxtorem(padding-top, 164);
+	box-sizing: border-box;
+}
+.logo {
+	display: block;
+	.pxtorem(width, 128);
+	.pxtorem(height, 128);
+	.pxtorem(margin-bottom, 100);
+	margin-left: auto;
+	margin-right: auto;
+}
+.form {
+	.pxtorem(width, 594);
+	margin: 0 auto;
+	.pxtorem(padding-bottom,322);
+}
+.input-form {
+	width: 100%;
+	.pxtorem(height, 106);
+	margin: 0 auto;
+	box-sizing: border-box;
+	.pxtorem(padding-top, 32);
+	.pxtorem(padding-bottom, 32);
+	border-bottom: 1px solid rgba(75, 71, 85, 0.2);
+}
+.input-form input {
+	display: block;
+	width: 100%;
+	.pxtorem(height, 42);
+	margin: 0 auto;
+	.fontSize(28);
+	color: #AEADAD;
+	.pxtorem(line-height, 42);
+	border: none;
+	outline: none;
+	.pxtorem(letter-spacing, 6);
+	box-sizing: border-box;
+	.pxtorem(padding-left, 56);
+	background-position: 0 0;
+	background-repeat: no-repeat;
+}
+.user-name {
+	background-image: url(../images/phone.png);
+	background-size: 0.5546666666666666rem 0.896rem;
+}
+.pass-word {
+	background-image: url(../images/password.png);
+	background-size: 0.5973333333333334rem 0.8746666666666667rem;
+}
+.user-name:hover {
+	background-image: url(../images/onphone.png);
+	background-size: 0.5546666666666666rem 0.896rem;
+}
+.pass-word:hover {
+	background-image: url(../images/fousepassord.png);
+	background-size: 0.5973333333333334rem 0.8746666666666667rem;
+}
+
+.login-submit {
+	display: block;
+	width: 100%;
+	.pxtorem(height, 74);
+	.fontSize(32);
+	color: #F1F1F1;
+	.pxtorem(border-radius, 6);
+	background-color: #AEADAD;
+	.pxtorem(margin-top, 50);
+	.pxtorem(margin-bottom, 26);
+	margin-left: auto;
+	margin-right: auto;
+	border: none;
+	outline: none;
+}
+.login-submit:hover {
+	background-color: #FE644A;
+}
+.remember-box {
+	position: relative;
+	.pxtorem(height, 28);
+}
+.remember-box a {
+	position: absolute;
+	top: 0;
+	display: block;
+	color: #707070;
+	.fontSize(28);
+	cursor: pointer;
+}
+.forget-password {
+	left: 0;
+}
+.regisr-now {
+	right: 0;
+}
+.go-login {
+	.pxtorem(margin-top, -262);
+	.pxtorem(height, 262);
+}
+.header-or {
+	position: relative;
+	.pxtorem(width, 594);
+	text-align: center;
+	margin: 0 auto;
+	color: #707070;
+}
+.header-or:before, .header-or:after {
+	position: absolute;
+	.pxtorem(width, 246);
+	height: 0;
+	content: '';
+	.fontSize(36);
+	color: #707070;
+	border-bottom: 1px solid rgba(75, 71, 85, 0.2);
+}
+.header-or:before {
+	left: 0;
+}
+.header-or:after {
+	right: 0;
+}
+.load-login {
+	position: relative;
+	list-style: none;
+	.pxtorem(width, 390);
+	.pxtorem(height, 69);
+	.pxtorem(margin-top, 60);
+	margin-left: auto;
+	margin-right: auto;
+
+	li {
+		position: absolute;
+		text-align: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+}
+.weixin-login {
+	left: 0;
+	.pxtorem(width, 83);
+	.pxtorem(height, 66);
+	background-image: url(../images/weixilogin.png);
+}
+.weibo-login {
+	left: 50%;
+	.pxtorem(width, 86);
+	.pxtorem(height, 69);
+	transform: translateX(-50%);
+	background-image: url(../images/weibologin.png);
+}
+.qq-login {
+	right: 0;
+	.pxtorem(width, 65);
+	.pxtorem(height, 68);
+	background-image: url(../images/qqlogin.png);
+}
+
+.weixin-login:hover{
+	background-image: url(../images/weixilogin.png);
+}
+.weibo-login:hover{
+	background-image: url(../images/weibologin.png);
+}
+.qq-login:hover{
+	background-image: url(../images/qqlogin.png);
+}

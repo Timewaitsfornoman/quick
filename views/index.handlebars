@@ -1,0 +1,73 @@
+
+{{#section 'head'}}
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+{{/section}}
+
+    <header class="header-wapper">
+        <article class="header-nav">
+            <h1 class="company-name">图加科技</h1>
+            <img class="logo" src="/images/logo.png" alt="logo"/>
+            <p class="user-action">
+                <a id="J_userstatus" href="javascript:;"></a>
+                <span class="line-status">|</span>
+                <a id="J_exist" href="javascript:;">退出</a>
+            </p>
+        </article>
+    </header>
+
+    <section class="wapper-content">
+
+        <ul class="J_ullist ui-lists">
+            <li class="list-item">
+                <img class="create-newitem" src="/images/temp_green.png" alt="logo"/>
+                <a id="J_createpage" class="create-newpage" href="javascript:;">创建</a>
+            </li>
+
+            {{#each page_lists}}
+            <li class="list-item">
+                <span class="J_users user-name ease-out"></span>
+                <img class="temple-icon" src="/images/temple_icon.png" alt="logo"/>
+                <article class="temple-content">
+                    <h1 class="temple-title">标题：{{page_name}}</h1>
+                    <h2 class="create-date">创建日期：{{create_date}}</h2>
+                </article>
+                <section class="oprite-content">
+                    <a data-id={{id}} class="J_delete delete-temple" href="javascript:;">删除</a>
+                    {{!-- <a data-id={{id}} class="J_edit edit-temple" href="javascript:;">编辑</a> --}}
+                    <a class="J_preview preview-temple" href="{{page_address}}" data-address={{page_address}} target="_blank" data-id={{id}}>预览</a>
+                </section>
+            </li>
+            {{/each}}
+        </ul>
+    </section>
+
+    <div class="J_popout pop-layout hide">
+        <section class="create_dialog">
+            <h1>创建页面</h1>
+            <form action="/createPage" method="post">
+                <input id="J_pagename" type="text" name="page_name" placeholder="请输入页面中文名称"/>
+                <input id="J_pageaddress" type="text" name="page_adrress" placeholder="请输入页面字母名称"/>
+                <input id="J_cansecreatePage" type="button" name="button" value="取消创建"/>
+                <input id="J_createinitPage" type="submit" name="submit" value="开始创建"/>
+            </form>
+        </section>
+    </div>
+
+    <div class="J_deletepoplayer delete_poplayer hide">
+        <div class="delete-content">
+            <h2 class="title-delete">删除图集</h2>
+            <p class="delete-tips">真的要删除图集？</p>
+            <div class="delete">
+                <button class="J_deletepages cansel-styles" type="button">删除</button>
+                <button class="J_cansepages cansel-styles deside" type="button">取消</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-copy">图加科技@2016-09-01</footer>
+
+{{#section 'jscodelink'}}
+    {{!-- <script id="J_temppages" type="text/x-handlebars-template">
+    </script> --}}
+    <script type="text/javascript" src="js/index.js"></script>
+{{/section}}
