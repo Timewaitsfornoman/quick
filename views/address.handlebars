@@ -1,5 +1,4 @@
 {{#section 'head'}}
-    <link rel="stylesheet" type="text/css" href="css/logininin.css">
     <style type="text/css" media="screen">
         nav {
             -webkit-transform: translateZ(0px);
@@ -113,37 +112,23 @@
             color: #333;
         }
     </style>
+    <style>
+
+        .title{
+            font-size: 14px;
+        }
+
+        .img{
+            display: block;
+            margin: 0 auto;
+        }
+        
+    </style>
 {{/section}}
-
-   <div class="login-wrapper">
-
-        <img class="logo" src="/images/logoapp.png"/>
-
-        <form method="post" action="/login" class="form" autocomplete="off">
-            <p class="input-form">
-                <input id="J_username" class="user-name" type="input" name="username" value="admincn@scopemedia.com" required="required" autocomplete="off" placeholder="用户名/手机号"/ >
-            </p>
-            <p class="input-form">
-                <input id="J_password" class="pass-word" type="password" name="password" value="123abc456efg" required="required" autocomplete="off" placeholder="密码"/>
-            </p>
-            <p>
-                <input id="J_login" class="login-submit" type="submit" name="submit" value="登陆"/>
-            </p>
-            <p class="remember-box">
-                <a class="forget-password">忘记密码？</a>
-                <a class="regisr-now">立即注册</a>
-            </p>
-        </form>
-   </div>
-   
-   <section class="go-login">
-        <h1 class="header-or">or</h1>
-        <ul class="load-login">
-            <li class="weixin-login"></li>
-            <li class="weibo-login"></li>
-            <li class="qq-login"></li>
-        </ul>
-    </section>
+    <div class="wapper">
+        <h1 class="title" id="J_address"></h1>
+        <img class="img" alt="Map">
+    </div>
     <nav>
         <ul>
             <li class="up">
@@ -226,5 +211,51 @@
         </ul>
     </nav>
 {{#section 'jscodelink'}}
-    <script type="text/javascript" src="js/loginin.js"></script>
+    <script>
+        if (navigator.geolocation){
+
+            navigator.geolocation.getCurrentPosition(function(position){
+
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var latlon = latitude + "," + longitude;
+                
+                var url = 'http://api.map.baidu.com/geocoder/v2/?location='+ latlon +'&output=json&pois=1&ak=DRWj6N7AlyGWnnG2r0Of3EGCCSiPHF3g&coordtype=wgs84ll';
+                $('img').attr('src','http://api.map.baidu.com/panorama/v2?ak=DRWj6N7AlyGWnnG2r0Of3EGCCSiPHF3g&width=1024&height=512&location='+ latlon +'&fov=180 ');
+
+                $.ajax({
+                    url: url,
+                    type: 'get',
+                    success: function(res, textStatus, jqXHR) {
+                        console.log(res);
+                        console.log(res.formatted_address);
+                        $('#J_address').html(res.formatted_address);
+
+                    },
+                    error: function(res) {
+                    }
+                });
+            },function(error){
+                var errorString = '';
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        errorString = "用户拒绝对获取地理位置的请求。"
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        errorString = "位置信息是不可用的。"
+                        break;
+                    case error.TIMEOUT:
+                        errorString = "请求用户地理位置超时。"
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        errorString = "未知错误。"
+                        break;
+                }
+                $('#J_address').html(errorString);
+            });
+        }else{
+            errorString = "该浏览器不支持获取地理位置。";
+            $('#J_address').html(errorString);
+        }
+    </script>
 {{/section}}
