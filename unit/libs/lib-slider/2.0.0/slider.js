@@ -1,11 +1,3 @@
-/**
- * @desc    slide组件（支持translate3d）
- * @author  王玉林 <veryued@gmail.com>
- * @date    2014-08-05
- * @update  李怡志 于2015-09-25 修改,添加triggerIndex
- * @update  余彰显 于2015-10-20 完善需求体验
- */
-
 var hasTransform = function() { // 判断浏览器是否支持transform（仅webkit）
         var ret = ('WebkitTransform' in document.documentElement.style) ? true : false;
         return ret;
