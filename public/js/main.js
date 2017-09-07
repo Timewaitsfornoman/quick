@@ -1,5 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var ajax = require('../../unit/common/js/getApi');
+var shareBox = require('../../unit/common/js/shareBox');
 var slider = require('../../unit/libs/lib-slider/2.0.0/slider');
 
 var page = 1;
@@ -10,6 +11,7 @@ var index = {
     init: function() {
         this.sendApi.mainApi();
         this.addEvent();
+        shareBox();
     },
 
     readerBanner: function(data) {
@@ -157,63 +159,11 @@ var index = {
                     break;
             }
         });
-
-        var hide = true;
-        var $J_sharebox = $('#J_sharebox');
-        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-
-        $('#J_shareMenu').on('click', function(event) {
-
-            var $this = $(this);
-            
-            $J_sharebox.css(
-                'display', 'block'
-            );
-
-            setTimeout(function(){
-                requestAnimationFrame(function(){
-
-                    $('#J_sharecont').css({
-                        'transform': 'translate3d(0, 0, 0)'
-                    });
-
-                    $('#J_shareMask').css({
-                        'opacity': 1
-                    });
-                });
-            },0)
-
-            hide = false;
-        });
-
-        $J_sharebox.on('click', '.J_closeShare', function(event) {
-
-            var $this = $(this);
-            requestAnimationFrame(function(){
-                $('#J_sharecont').css({
-                    'transform': 'translate3d(0px, 100%, 0px)'
-                });
-
-                $('#J_shareMask').css({
-                    'opacity': 0
-                });
-            });
-
-            hide = true;
-        });
-
-        $('#J_shareMask').on('transitionend', function() {
-
-            if (hide) {
-                $J_sharebox.css('display', 'none');
-            }
-
-        });
     }
 };
 
 index.init();
-},{"../../unit/common/js/getApi":2,"../../unit/libs/lib-slider/2.0.0/slider":4}],2:[function(require,module,exports){
+},{"../../unit/common/js/getApi":2,"../../unit/common/js/shareBox":3,"../../unit/libs/lib-slider/2.0.0/slider":5}],2:[function(require,module,exports){
 /**
  * @desc    图加数据接口全局方法
  * @author  lzc(黑莓)
@@ -288,7 +238,70 @@ $.extend(getApi, {
 
 module.exports = getApi;
 
-},{"../../libs/lib-popup/1.0.0/popup":3}],3:[function(require,module,exports){
+},{"../../libs/lib-popup/1.0.0/popup":4}],3:[function(require,module,exports){
+
+var shareBox = function(shareMenu) {
+
+    var hide = true;
+    var $J_sharebox = $('#J_sharebox');
+    var $J_shareMask = $('#J_shareMask');
+    var $J_sharecont = $('#J_sharecont');
+    var $J_shareMenu = shareMenu || $('#J_shareMenu');
+
+    var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+    $J_shareMenu.on('click', function(event) {
+
+        var $this = $(this);
+
+        $J_sharebox.css(
+            'display', 'block'
+        );
+
+        setTimeout(function() {
+            requestAnimationFrame(function() {
+
+                $J_sharecont.css({
+                    'transform': 'translate3d(0, 0, 0)'
+                });
+
+                $J_shareMask.css({
+                    'opacity': 1
+                });
+            });
+        }, 0)
+
+        hide = false;
+    });
+
+    $J_sharebox.on('click', '.J_closeShare', function(event) {
+
+        var $this = $(this);
+        requestAnimationFrame(function() {
+            $J_sharecont.css({
+                'transform': 'translate3d(0px, 100%, 0px)'
+            });
+
+            $J_shareMask.css({
+                'opacity': 0
+            });
+        });
+
+        hide = true;
+    });
+
+    $J_shareMask.on('transitionend', function() {
+
+        if (hide) {
+            $J_sharebox.css('display', 'none');
+        }
+
+    });
+};
+
+
+module.exports = shareBox;
+},{}],4:[function(require,module,exports){
 
 var defaultConfig = {
 
@@ -612,7 +625,7 @@ popup.alert = function(text, config, callback) {
 };
 
 module.exports = popup;
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 var hasTransform = function() { // 判断浏览器是否支持transform（仅webkit）
         var ret = ('WebkitTransform' in document.documentElement.style) ? true : false;
         return ret;
