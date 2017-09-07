@@ -164,19 +164,23 @@ var index = {
         $('#J_shareMenu').on('click', function(event) {
 
             var $this = $(this);
+            
             $J_sharebox.css(
                 'display', 'block'
             );
 
-            requestAnimationFrame(function(){
-                $('#J_sharecont').css({
-                    'transform': 'translate3d(0, 0, 0)'
-                });
+            setTimeout(function(){
+                requestAnimationFrame(function(){
 
-                $('#J_shareMask').css({
-                    'opacity': 1
+                    $('#J_sharecont').css({
+                        'transform': 'translate3d(0, 0, 0)'
+                    });
+
+                    $('#J_shareMask').css({
+                        'opacity': 1
+                    });
                 });
-            });
+            },0)
 
             hide = false;
         });

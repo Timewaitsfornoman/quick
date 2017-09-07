@@ -7,7 +7,9 @@ function startWorker() {
 
 if(cluster.isMaster){
 
-    require('os').cpus().forEach(function(){
+    let cpus = require('os').cpus();
+
+    cpus.forEach(function(){
 	    startWorker();
     });
 
@@ -16,6 +18,11 @@ if(cluster.isMaster){
     // a new worker to replace it
     cluster.on('disconnect', function(worker){
         console.log('CLUSTER: Worker %d disconnected from the cluster.',
+            worker.id);
+    });
+
+    cluster.on('online', function(worker){
+        console.log('CLUSTER: Server at %d from the cluster.',
             worker.id);
     });
 

@@ -160,23 +160,28 @@ var index = {
 
         var hide = true;
         var $J_sharebox = $('#J_sharebox');
+        var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
         $('#J_shareMenu').on('click', function(event) {
 
             var $this = $(this);
+            
             $J_sharebox.css(
                 'display', 'block'
             );
 
-            requestAnimationFrame(function(){
-                $('#J_sharecont').css({
-                    'transform': 'translate3d(0, 0, 0)'
-                });
+            setTimeout(function(){
+                requestAnimationFrame(function(){
 
-                $('#J_shareMask').css({
-                    'opacity': 1
+                    $('#J_sharecont').css({
+                        'transform': 'translate3d(0, 0, 0)'
+                    });
+
+                    $('#J_shareMask').css({
+                        'opacity': 1
+                    });
                 });
-            });
+            },0)
 
             hide = false;
         });
@@ -184,12 +189,14 @@ var index = {
         $J_sharebox.on('click', '.J_closeShare', function(event) {
 
             var $this = $(this);
-            $('#J_sharecont').css({
-                'transform': 'translate3d(0px, 100%, 0px)'
-            });
+            requestAnimationFrame(function(){
+                $('#J_sharecont').css({
+                    'transform': 'translate3d(0px, 100%, 0px)'
+                });
 
-            $('#J_shareMask').css({
-                'opacity': 0
+                $('#J_shareMask').css({
+                    'opacity': 0
+                });
             });
 
             hide = true;
