@@ -93,7 +93,7 @@ module.exports = {
 
     registerpostRoutes: function(app) {
         app.post('/api/user/login', postAction.login);
-        app.post('/user/regist', postAction.register);
+        app.post('/api/user/regist', postAction.register);
         app.post('/api/login', function(req, res, next) {
             login(req, res);
         });

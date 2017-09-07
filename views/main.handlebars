@@ -1,15 +1,15 @@
 {{#section 'head'}}
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-{{/section}}
-<header id="header" class="main-header">
-  <p class="search">
-    <input class="search-content" type="text" name="search" value="" placeHolder="大家都在搜"/>
-    <button class="search-button" type="button"></button>
-  </p>
-</header>
- <!--  轮播图 -->
-<section id="J_slider" class="slider"></section>
+<link rel="stylesheet" type="text/css" href="css/main.css"> {{/section}}
 
+
+<header id="header" class="main-header">
+    <p class="search">
+        <input class="search-content" type="text" name="search" value="" placeHolder="大家都在搜" />
+        <button id="J_shareButton" class="search-button" type="button"></button>
+    </p>
+</header>
+<!--  轮播图 -->
+<section id="J_slider" class="slider"></section>
 <section class="main-content">
     <ul id="J_navheader" class="header-nav">
         <li class="nav-current"><span class="J_item">推存</span></li>
@@ -19,14 +19,48 @@
         <li><span class="J_item">生活</span></li>
     </ul>
     <section id="J_content" class="main-list">
-       <ul id="J-tuicun" class="list-items"></ul>
-       <ul id="J-yule" class="list-items hide"></ul>
-       <ul id="J-shishang" class="list-items hide"></ul>
-       <ul id="J-lvyou" class="list-items hide"></ul>
-       <ul id="J-shenghuo" class="list-items hide"></ul>
+        <ul id="J-tuicun" class="list-items"></ul>
+        <ul id="J-yule" class="list-items hide"></ul>
+        <ul id="J-shishang" class="list-items hide"></ul>
+        <ul id="J-lvyou" class="list-items hide"></ul>
+        <ul id="J-shenghuo" class="list-items hide"></ul>
     </section>
 </section>
 
+<div id="J_sharebox" class="image-share-popup-wrapper">
+    <div id="J_sharecont" class="image-share-popup-content">
+        <div class="image-share-popup-dom portrait">
+            <div class="image-share-list">
+                <div class="image-flexbox line1">
+                    <div class="image-share-btn" data-index="0"> <img class="image-share-icon" src="//img6.bdstatic.com/img/image/smallpic/wx.png">
+                        <div class="image-gap-top">微信好友</div>
+                    </div>
+                    <div class="image-share-btn" data-index="1"> <img class="image-share-icon" src="//img6.bdstatic.com/img/image/smallpic/pyq.png">
+                        <div class="image-gap-top">朋友圈</div>
+                    </div>
+                    <div class="image-share-btn" data-index="2"> <img class="image-share-icon" src="//img6.bdstatic.com/img/image/smallpic/qq.png">
+                        <div class="image-gap-top">QQ好友</div>
+                    </div>
+                    <div class="image-share-btn" data-index="3"> <img class="image-share-icon" src="//img6.bdstatic.com/img/image/smallpic/qqzone.png">
+                        <div class="image-gap-top">QQ空间</div>
+                    </div>
+                    <div class="image-share-btn line2-btn" data-index="4"> <img class="image-share-icon" src="//img6.bdstatic.com/img/image/smallpic/wb.png">
+                        <div class="image-gap-top">新浪微博</div>
+                    </div>
+                </div>
+                <div class="image-flexbox line2">
+                    <div class="image-share-btn" data-index="4"> <img class="image-share-icon" src="//img6.bdstatic.com/img/image/smallpic/wb.png">
+                        <div class="image-gap-top">新浪微博</div>
+                    </div>
+                    <div class="image-share-btn" data-index="5" style="flex: 3;"> </div>
+                </div>
+            </div>
+        </div>
+        <div class="J_closeShare image-share-popup-remove">取消</div>
+    </div>
+    <div id="J_shareMask" class="J_closeShare image-share-popup-mask"> </div>
+</div>
+
 {{#section 'jscodelink'}}
-    <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 {{/section}}

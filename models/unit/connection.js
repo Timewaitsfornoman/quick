@@ -12,7 +12,7 @@ var connection = null;
 var config = {
     host: 'localhost',
     user: 'root',
-    password: '123456',
+    password: 'root',
     database: 'quick_db'
 };
 

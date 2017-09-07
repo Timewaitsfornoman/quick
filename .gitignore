@@ -1,2 +1,3 @@
-# ignore packages installed by npm
+# ignore packages
 node_modules*
+build*

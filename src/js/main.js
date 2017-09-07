@@ -155,7 +155,54 @@ var index = {
                     $('#J-shenghuo').removeClass('hide').siblings().addClass('hide');
                     break;
             }
-        })
+        });
+        var hide = true
+
+        $('#J_shareButton').on('click', function(event) {
+
+            var $this = $(this);
+            $J_sharebox.css(
+                'display', 'block'
+            );
+
+            $('#J_sharecont').css({
+                'display': 'block',
+            });
+
+            setTimeout(function(){
+                $('#J_sharecont').css({
+                    'transform': 'translate3d(0, 0, 0)'
+                });
+            },0);
+
+            $('#J_shareMask').css({
+                'opacity': 1,
+                'display': 'block'
+            });
+            hide = false;
+        });
+
+        $J_sharebox.on('click', '.J_closeShare', function(event) {
+
+            var $this = $(this);
+            $('#J_sharecont').css({
+                'transform': 'translate3d(0px, 100%, 0px)'
+            });
+
+            $('#J_shareMask').css({
+                'opacity': 0
+            });
+
+            hide = true;
+        });
+
+        $('#J_sharecont').on('transitionend', function() {
+
+            if (hide) {
+                $J_sharebox.css('display', 'none');
+            }
+
+        });
     }
 };
 
