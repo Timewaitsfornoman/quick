@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node server"
+    "start": "node bin/cluster.js --port 3000"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
 var http = require('http');
 var express = require('express');
 var opn = require('opn');
-var proxy = require('http-proxy-middleware');
+// var proxy = require('http-proxy-middleware');
 var session = require('express-session');
 
 var app = express();
@@ -22,7 +22,7 @@ var handlebars = require('express3-handlebars').create({
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', process.env.PORT || 80);
+app.set('port', process.env.PORT || 3000);
 
 // logging
 switch (app.get('env')) {
@@ -88,7 +88,7 @@ var startServer = function() {
         console.log('Express started in ' + app.get('env') +
             ' mode on port ' + app.get('port') +
             '; press Ctrl-C to terminate.');
-        opn('http://localhost');
+        // opn('http://localhost');
     });
 }
 

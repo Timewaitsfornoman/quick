@@ -156,7 +156,9 @@ var index = {
                     break;
             }
         });
-        var hide = true
+
+        var hide = true;
+        var $J_sharebox = $('#J_sharebox');
 
         $('#J_shareButton').on('click', function(event) {
 
@@ -169,16 +171,20 @@ var index = {
                 'display': 'block',
             });
 
+            $('#J_shareMask').css({
+                'display': 'block'
+            });
+
             setTimeout(function(){
                 $('#J_sharecont').css({
                     'transform': 'translate3d(0, 0, 0)'
                 });
+
+                $('#J_shareMask').css({
+                    'opacity': 1
+                });
             },0);
 
-            $('#J_shareMask').css({
-                'opacity': 1,
-                'display': 'block'
-            });
             hide = false;
         });
 
@@ -196,7 +202,7 @@ var index = {
             hide = true;
         });
 
-        $('#J_sharecont').on('transitionend', function() {
+        $('#J_shareMask').on('transitionend', function() {
 
             if (hide) {
                 $J_sharebox.css('display', 'none');
