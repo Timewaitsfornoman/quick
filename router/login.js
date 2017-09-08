@@ -95,7 +95,11 @@ module.exports = {
         app.post('/api/user/login', postAction.login);
         app.post('/api/user/regist', postAction.register);
         app.post('/api/login', function(req, res, next) {
-            login(req, res);
+            // login(req, res)
+            res.json({
+                success: true,
+                msg: '登录成功'
+            });;
         });
         app.post('/api/main', function(req, res, next) {
             main(req, res);
