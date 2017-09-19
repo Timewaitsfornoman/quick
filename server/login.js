@@ -2,7 +2,6 @@
  * @synopsis 登录
  * @param fn, 回调
  */
-
 var request = require('request');
 var main = require('./main');
 var baseUrl = require('../config/config.js');
@@ -30,7 +29,7 @@ var superLogin = function(req, res) {
         if (data) {
 
             try {
-                console.log('data',data);
+                console.log('data', data);
                 typeof data === 'string' && (data = JSON.parse(data));
 
                 if (data.token_type && data.access_token) {
@@ -55,7 +54,7 @@ var superLogin = function(req, res) {
                     'status': 'error',
                     'msg': '服务器异常'
                 });
-                console.log('catch',e);
+                console.log('catch', e);
             }
         } else {
             res.status(500);
