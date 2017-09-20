@@ -1,6 +1,7 @@
 var ajax = require('../../unit/common/js/getApi');
 
 var lock = false;
+var $J_login = $('#J_login');
 
 var index = {
 
@@ -57,7 +58,6 @@ var index = {
     addEvent: function() {
 
         var $this = this;
-        var $J_login = $('#J_login');
 
         $J_login.on('click', function(event) {
             event.preventDefault();

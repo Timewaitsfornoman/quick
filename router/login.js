@@ -94,7 +94,7 @@ module.exports = {
     registerpostRoutes: function(app) {
         app.post('/api/user/login', postAction.login);
         app.post('/api/user/regist', postAction.register);
-        app.post('/api/login', function(req, res, next) {
+        app.post('/api/mlogin', function(req, res, next) {
             // login(req, res)
             res.json({
                 success: true,
