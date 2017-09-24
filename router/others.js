@@ -1,8 +1,14 @@
 var router = {
 
-    registergetRoutes: function(app) { 
-        app.get('/address',function(req, res, next) {
+    registergetRoutes: function(app) {
+        app.get('/address', function(req, res, next) {
             res.render('address');
+        });
+
+        app.get('/twitem', function(req, res, next) {
+            res.render('twitem', {
+                layout: 'mainmobile'
+            });
         });
     },
 

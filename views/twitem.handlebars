@@ -1,0 +1,133 @@
+{{#section 'head'}}
+<style type="text/css" media="screen">
+    .menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 150;
+        background-color: #fff;
+    }
+    
+    html,
+    body,
+    .layout {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+    }
+    
+    .menu-icon {
+        position: absolute;
+        color: #000;
+        left: 6px;
+        top: 6px;
+        cursor: pointer;
+        width: 60px;
+        height: 60px;
+        text-indent: -999em;
+        border: 1px solid #ccc;
+        background-repeat: no-repeat;
+        background-position: -52px 10px;
+        background-image: url(data:image/png;base64,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);
+    }
+    
+    .menu—visible {
+        pointer-events: auto;
+    }
+    
+    .app-menu {
+        color: #fff;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+        -webkit-transform: translateX(-103%);
+        transform: translateX(-103%);
+        display: flex;
+        flex-direction: column;
+        will-change: transform;
+        z-index: 160;
+        pointer-events: auto;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .menu-visible .app-menu {
+        -webkit-transform: none;
+        transform: none;
+    }
+    
+    .menu-animatable .app-menu {
+        transition: all 130ms ease-in;
+    }
+    
+    .menu-visible.menu-animatable .app-menu {
+        transition: all 330ms ease-out;
+    }
+    
+    .menu:after {
+        content: ‘’;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+    }
+    
+    .menu.menu-visible:after {
+        opacity: 1;
+        pointer-events: auto;
+    }
+</style>
+{{/section}}
+
+<div class="menu">
+    <div class="menu-icon">menu</div>
+    <div class="app-menu"></div>
+</div>
+<div class="layout">
+    <div class="header"></div>
+</div>
+
+{{#section 'jscodelink'}}
+<script>
+    function toggleClassMenu(e) {
+        myMenu.classList.add("menu-animatable");
+        myMenu.classList.add("menu-visible");
+        // appmenus.style.webkitTransform = 'translateX(60%)';
+        appmenus.addEventListener("transitionend",
+            OnTransitionEnd, false);
+        e.stopPropagation();
+        return false;
+    }
+
+    function OnTransitionEnd() {
+        myMenu.classList.remove("menu-animatable");
+        // myMenu.style.webkitTransform = 'translateX(60px)';
+    }
+
+    function toggleMyMenu(e) {
+        myMenu.classList.remove("menu-visible");
+        // appmenus.style.webkitTransform = 'translateX(0)';
+        return false;
+    }
+
+
+    var myMenu = document.querySelector(".menu");
+    var appmenus = document.querySelector(".app-menu");
+    var oppMenu = document.querySelector(".menu-icon");
+
+    oppMenu.addEventListener("click", toggleClassMenu, false);
+
+    myMenu.addEventListener("click", toggleMyMenu, false);
+</script>
+{{/section}}

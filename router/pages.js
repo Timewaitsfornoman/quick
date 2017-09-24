@@ -10,7 +10,7 @@ var getAction = {
             var data = req.body;
 
             if (err) {
-                res.json({ 'success': false,'msg': '数据库出错了','error': '数据库出错了' });
+                res.json({ 'success': false, 'msg': '数据库出错了', 'error': '数据库出错了' });
             }
 
             if (rows) {
@@ -29,7 +29,7 @@ var getAction = {
     createpage: function(req, res, next) {
         res.render('createpage');
     },
-    
+
     editpage: function(req, res, next) {
         res.render('editpage');
     }
@@ -38,11 +38,11 @@ var getAction = {
 var postAction = {
 
     addPages: function(req, res, next) {
-        
+
         var data = req.body;
         var page_address = data.page_address;
 
-        if(!!page_address){
+        if (!!page_address) {
             data.page_address = 'http://m.tujiamedia.com/html/app/activities/' + page_address + '.html';
         }
 
@@ -51,12 +51,12 @@ var postAction = {
             var data = req.body;
 
             if (err) {
-                res.json({ 'success': false, 'msg': '数据库出错了','error': '数据库出错了' });
+                res.json({ 'success': false, 'msg': '数据库出错了', 'error': '数据库出错了' });
             }
 
             if (rows) {
-                console.log('rows',rows);
-                console.log('fields',fields);
+                console.log('rows', rows);
+                console.log('fields', fields);
                 res.json({ 'success': true, 'msg': '创建成功', 'id': rows.insertId });
                 return;
             }
@@ -70,12 +70,12 @@ var postAction = {
         connection.deletePage(req.body.id, function(err, rows, fields) {
 
             if (err) {
-                res.json({ 'success': false, 'msg': '数据库出错了','error': '数据库出错了' });
+                res.json({ 'success': false, 'msg': '数据库出错了', 'error': '数据库出错了' });
             }
 
             if (rows) {
-                console.log('rows',rows);
-                console.log('fields',fields);
+                console.log('rows', rows);
+                console.log('fields', fields);
                 res.json({ 'success': true, 'msg': '删除成功', 'id': rows.insertId });
                 return;
             }
@@ -87,43 +87,43 @@ var postAction = {
 
         var data = req.body;
         var page_address = data.page_address;
-        
-        if(!!page_address){
+
+        if (!!page_address) {
             data.page_address = 'http://m.tujiamedia.com/html/app/activities/' + page_address + '.html';
         }
 
         connection.updatePages(data, function(err, rows, fields) {
-            console.log('err',err);
+            console.log('err', err);
             if (err) {
-                res.json({ 'success': false, 'msg': '数据库出错了','error': '数据库出错了' });
+                res.json({ 'success': false, 'msg': '数据库出错了', 'error': '数据库出错了' });
             }
 
             if (rows) {
-                console.log('rows',rows);
-                console.log('fields',fields);
+                console.log('rows', rows);
+                console.log('fields', fields);
 
-                if(!!data.html && !!page_address){
+                if (!!data.html && !!page_address) {
 
-                    fs.writeFile('./build/html/app/activities/' + page_address + '.html', data.html,  function(err) {
-                       if (err) {
-                           return console.error(err);
-                       }
-                       console.log('html写入成功');
+                    fs.writeFile('./build/html/app/activities/' + page_address + '.html', data.html, function(err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                        console.log('html写入成功');
                     });
 
                 }
 
-                if(!!data.css && !!page_address){
+                if (!!data.css && !!page_address) {
 
-                    fs.writeFile('./build/assets/css/app/activities/' + page_address + '.css', data.css,  function(err) {
-                       if (err) {
-                           return console.error(err);
-                       }
-                       console.log('css写入成功');
+                    fs.writeFile('./build/assets/css/app/activities/' + page_address + '.css', data.css, function(err) {
+                        if (err) {
+                            return console.error(err);
+                        }
+                        console.log('css写入成功');
                     });
                 }
 
-                res.json({ 'success': true, 'msg': '操作成功'});
+                res.json({ 'success': true, 'msg': '操作成功' });
                 return;
             }
         });
