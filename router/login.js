@@ -93,9 +93,13 @@ module.exports = {
 
     registerpostRoutes: function(app) {
         app.post('/api/user/login', postAction.login);
-        app.post('/user/regist', postAction.register);
-        app.post('/api/login', function(req, res, next) {
-            login(req, res);
+        app.post('/api/user/regist', postAction.register);
+        app.post('/api/mlogin', function(req, res, next) {
+            // login(req, res)
+            res.json({
+                success: true,
+                msg: '登录成功'
+            });;
         });
         app.post('/api/main', function(req, res, next) {
             main(req, res);

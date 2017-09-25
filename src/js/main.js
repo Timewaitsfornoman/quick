@@ -1,4 +1,5 @@
 var ajax = require('../../unit/common/js/getApi');
+var shareBox = require('../../unit/common/js/shareBox');
 var slider = require('../../unit/libs/lib-slider/2.0.0/slider');
 
 var page = 1;
@@ -9,6 +10,7 @@ var index = {
     init: function() {
         this.sendApi.mainApi();
         this.addEvent();
+        shareBox();
     },
 
     readerBanner: function(data) {
@@ -155,7 +157,7 @@ var index = {
                     $('#J-shenghuo').removeClass('hide').siblings().addClass('hide');
                     break;
             }
-        })
+        });
     }
 };
 

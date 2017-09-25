@@ -13,6 +13,7 @@ html,
 body {
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .container {
@@ -34,10 +35,11 @@ body {
     position: absolute;
     top: 46%;
     left: 50%;
-    width: 360px;
+    width: 90%;
     height: 440px;
+    max-width: 360px;
     box-sizing: border-box;
-    margin: -220px 0 0 -180px;
+    transform: translate(-50%, -50%);
 }
 
 .form {
@@ -132,24 +134,29 @@ body {
 .loginhelp a:last-child {
     float: right;
 }
+.loading{
+    position: relative;
+}
 
 .loading:after {
-    overflow: hidden;
-    font-size: 30px;
-    color: #F00;
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 16px;
+    height: 16px;
     border-radius: 100%;
-    display: inline-block;
-    vertical-align: bottom;
-    animation: ellipsis .6s infinite;
-    content: "\2026"; /* ascii code for the ellipsis character */
+    background-color: #ff0;
+    animation: ellipsis 3.82s infinite alternate;
+    margin: 0 0 0 -8px;
 }
 
 @keyframes ellipsis {    
-    from {
-        width: 2px;
+    0% {
+        transform: translateX(-3.82rem) rotate(0);
     }
-    to {
-        width: 60px;
+    100%{
+        transform: translateX(3.82rem) rotate(360deg);
     }
 }
 

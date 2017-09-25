@@ -2,6 +2,7 @@
 var ajax = require('../../unit/common/js/getApi');
 
 var lock = false;
+var $J_login = $('#J_login');
 
 var index = {
 
@@ -12,10 +13,10 @@ var index = {
     sendApi: {
 
         login: function(data) {
-
+            $J_login.html('登录中...');
             ajax.callAPI({
                 type: 'post',
-                url: '/api/login',
+                url: '/api/mlogin',
                 data: data,
                 dataType: 'json',
                 success: function(rsp) {
@@ -23,12 +24,13 @@ var index = {
                     if (rsp.success === true) {
                         window.location.href = '/main';
                     } else {
-
+                        $J_login.html('登录');
                     }
                     lock = false;
                 },
                 error: function(error) {
                     lock = false;
+                    $J_login.html('登录');
                 }
             });
         }
@@ -57,7 +59,6 @@ var index = {
     addEvent: function() {
 
         var $this = this;
-        var $J_login = $('#J_login');
 
         $J_login.on('click', function(event) {
             event.preventDefault();
