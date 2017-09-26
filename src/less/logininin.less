@@ -19,6 +19,15 @@ html,body,.container,.login-wrapper{
 	.pxtorem(margin-bottom, 100);
 	margin-left: auto;
 	margin-right: auto;
+	-webkit-transition: -webkit-filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: -webkit-filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95),-webkit-filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    will-change: filter;
+}
+.logo:hover {
+    -webkit-filter: brightness(120%) hue-rotate(45deg);
+    filter: brightness(120%) hue-rotate(45deg)
 }
 .form {
 	.pxtorem(width, 594);

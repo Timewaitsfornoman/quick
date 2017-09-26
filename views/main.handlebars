@@ -112,6 +112,26 @@
         font-size: 15px;
         color: #333;
     }
+
+    .img-filter{
+        display: block;
+        max-width: 100%;
+        margin: 12px auto;
+        -webkit-transition: -webkit-filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        transition: -webkit-filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        transition: filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        transition: filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95),-webkit-filter 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        will-change: filter;
+    }
+
+    .img-filter:hover {
+        -webkit-filter: brightness(120%) hue-rotate(45deg);
+        filter: brightness(120%) hue-rotate(45deg)
+    }
+    .full-width{
+        width: 100%;
+    }
+    
 </style>
 {{/section}}
 
@@ -139,6 +159,9 @@
         <ul id="J-shenghuo" class="list-items hide"></ul>
     </section>
 </section>
+
+<img class="img-filter full-width" src="images/filter.jpg"/>
+<img class="img-filter" src="images/waterpink.png"/>
 
 <div id="J_sharebox" class="image-share-popup-wrapper">
     <div id="J_sharecont" class="image-share-popup-content">
