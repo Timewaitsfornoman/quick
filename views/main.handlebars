@@ -125,8 +125,13 @@
     }
 
     .img-filter:hover {
-        -webkit-filter: brightness(120%) hue-rotate(45deg);
-        filter: brightness(120%) hue-rotate(45deg)
+        -webkit-filter: brightness(200%) hue-rotate(45deg);
+        filter: brightness(120%) hue-rotate(45deg);
+    }
+
+    .lighter:hover{
+        -webkit-filter: brightness(106%) hue-rotate(45deg) saturate(2) drop-shadow(5px 5px 5px #f00);
+        filter: brightness(106%) hue-rotate(45deg) saturate(2) drop-shadow(5px 5px 15px #f00);
     }
     .full-width{
         width: 100%;
@@ -161,7 +166,7 @@
 </section>
 
 <img class="img-filter full-width" src="images/filter.jpg"/>
-<img class="img-filter" src="images/waterpink.png"/>
+<img class="img-filter lighter" src="images/waterpink.png"/>
 
 <div id="J_sharebox" class="image-share-popup-wrapper">
     <div id="J_sharecont" class="image-share-popup-content">
