@@ -1,0 +1,116 @@
+{{#section 'head'}}
+    <link rel="stylesheet" type="text/css" href="css/customlink.css">
+{{/section}}
+
+<div id="J_background" class="custom-bg hide">
+    <div class="pic">
+        <div id="J_bg" class="bg"></div>
+        <div class="drop"></div>
+    </div>
+</div>
+
+<div id="J_waper" class="wapper hide">
+    <div id="J_headerwapper" class="header-wapper"></div>
+
+    <ul id="J_Twlist" class="tuwen-lists"></ul>
+
+    <div id="J_bottom" class="footer-bottom">
+        <section class="foot-content">
+            <div id="J_view" class="view-count hide">
+                <span class="J_statsed"></span>
+                <span class="J_complaint complaint-centent">举报</span>
+            </div>
+
+            <div id="J_footer" class="footer hide">
+                <img id="J_footerimgo" class="footer-content" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAA6CAMAAACERodRAAAAM1BMVEUAAAAzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzPKmszLAAAAEHRSTlMA7zB/vxBgIM/fn0CvcFCPR1tYmAAAArFJREFUWMPtVUkSozAMxJb3Df//tSMJJTHLAJepmoP7EELZUmtpieUR/SWe/EymyTQxMTExMTExMTHxH8PnrF9f1tkBouZlgPWPdm01fQO8iKiW2L9Q+udF9XpvmdTP0DwmIzGdLTK+uBtLu+7tnohUP8L/TsJdQqG/ZbJlXZbYT6jbKZ3oG+uPZSwABR/t73dT70sbKYIx4dta89Bks9GsmtM3NzzUBrWAcKxORIfR8T/o97XTrB631THetZPrBhSZSs0uH1RJRIsKLyEXexE7a2+JAF1ZYgqgx0jDtwn1wbwsr2AVSzgDog1dVl5q+OBIY6CQs39mgitZFqldo17bIawM+kJP47jfpqQvah/lkE699M8CvefjbTeOfN6fePlTesSI1tMoKrKQ2rlvJ3SUKTvDZzBqmFpdDAZoxLcOMnD2YkLKp3bJUsRqWxWqpsshzmmjSe63VZxWwly7wF3p1kvtjA1yh4i0RuoTj4syuWNHkuuEJn1Ua+zxqnYgWgmeidIm99bUmchTzsEd9BTq5wMC/LTuIqXC84XAJHLoQfUgIklYvqvFrAYf2fHOyWjMPfBUQr846oDg9InI+AxdAXemGc7Nk9CPRMGOlQcKtWJ4hRSgV+7VSsZ0fRy7wAqXLLA1Ea/4QESrZx3ByBSYaKxkI0EhUaOAazf4sEkqqdUQppPNLQV2aFBAKS3ydmo3m03EM4ybXwwLmkhND4B2Af2gVzL2O4VL1ytzJpn8iL8V4n4JcFWs5LMqEU+hcfedEKzmp8OHMrsJ4QP/+VuYmb2ni20jpwkAUuzimstCsuBh5CvyulOfJCIBF8sMxrP22ZE+Ls09DCeY0IPtnwWhWJryEfsBjjvDuizVSSa5i9kbENqoYdDjRwtM0YfxoLDfQwuVLIl/CetWYxI0/9bgDy/uQMrPebUdAAAAAElFTkSuQmCC" alt="尾巴" />
+                <!-- <img id="J_footerimgt" class="footer-content" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAA6CAMAAACERodRAAAAM1BMVEUAAAD///////////////////////////////////////////////////////////////+3leKCAAAAEHRSTlMA7zB/vxBgIM/fn0CvcFCPR1tYmAAAArFJREFUWMPtVUkSozAMxJb3Df//tSMJJTHLAJepmoP7EELZUmtpieUR/SWe/EymyTQxMTExMTExMTHxH8PnrF9f1tkBouZlgPWPdm01fQO8iKiW2L9Q+udF9XpvmdTP0DwmIzGdLTK+uBtLu+7tnohUP8L/TsJdQqG/ZbJlXZbYT6jbKZ3oG+uPZSwABR/t73dT70sbKYIx4dta89Bks9GsmtM3NzzUBrWAcKxORIfR8T/o97XTrB631THetZPrBhSZSs0uH1RJRIsKLyEXexE7a2+JAF1ZYgqgx0jDtwn1wbwsr2AVSzgDog1dVl5q+OBIY6CQs39mgitZFqldo17bIawM+kJP47jfpqQvah/lkE699M8CvefjbTeOfN6fePlTesSI1tMoKrKQ2rlvJ3SUKTvDZzBqmFpdDAZoxLcOMnD2YkLKp3bJUsRqWxWqpsshzmmjSe63VZxWwly7wF3p1kvtjA1yh4i0RuoTj4syuWNHkuuEJn1Ua+zxqnYgWgmeidIm99bUmchTzsEd9BTq5wMC/LTuIqXC84XAJHLoQfUgIklYvqvFrAYf2fHOyWjMPfBUQr846oDg9InI+AxdAXemGc7Nk9CPRMGOlQcKtWJ4hRSgV+7VSsZ0fRy7wAqXLLA1Ea/4QESrZx3ByBSYaKxkI0EhUaOAazf4sEkqqdUQppPNLQV2aFBAKS3ydmo3m03EM4ybXwwLmkhND4B2Af2gVzL2O4VL1ytzJpn8iL8V4n4JcFWs5LMqEU+hcfedEKzmp8OHMrsJ4QP/+VuYmb2ni20jpwkAUuzimstCsuBh5CvyulOfJCIBF8sMxrP22ZE+Ls09DCeY0IPtnwWhWJryEfsBjjvDuizVSSa5i9kbENqoYdDjRwtM0YfxoLDfQwuVLIl/CetWYxI0/9bgDy/uQMrPebUdAAAAAElFTkSuQmCC" alt="尾巴" /> -->
+                <p id="J_footerword" class="footer-word">“喜欢就创建你的图文故事吧”</p>
+            </div>
+
+             <div id="J_download" class="button hide">
+                <a href="http://download.tujiaapp.com" id="J_dllink" class="download-create create-altlas btn hide">
+                    <i></i> 创建你的图文故事
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <div id="J_pointComment" class="point-comment hide">
+        <header id="J_contentheader" class="header-poComment">
+            <span class="J_navitem J_navone nav-item current-nav">评论 0</span>
+            <span class="J_navitem J_navtwo nav-item">点赞 0</span>
+        </header>
+        <div class="commenlike-lists">
+            <ul id="J_comlist" class="comment-list"></ul>
+            <ul id="J_likeusers" class="likeusers-list hide"></ul>
+        </div>
+        <div id="J_downloadmore" class="buttom white-backgroud hide">
+            <a id="J_dllinkmore" href="http://download.tujiaapp.com" class="download-create create-altlas">
+                打开图加,查看更多评论
+            </a>
+        </div>
+    </div>
+
+    <!-- <div class="padding-center"></div> -->
+    <div id="J_altlas" class="altlas-list hide">
+        <h3 id="J_altTitle" class="altlas-title"><i></i>作者最新图文</h3>
+        <ul id="J_tuwenList" class="wapper-tuwen hide"></ul>
+        <p id="J_findmore" class="find-more hide">作者暂无更多图文，去发现更多有趣的内容吧</p>
+        <div id="J_getmoreAltlas" class="bottom getmore-altla hide">
+            <a href="http://event.tujiaapp.com/usercentertpl?userid=229828" class="download-create getmore-altlas btn"> <i></i> 阅读更多图文
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- 下载条 -->
+<div id="J_downloadbtn" class="download-bar hide">
+    <div class="down-loadar">
+        <img class="logo-iocon" src="../images/tujia_app_icon.png">
+        <div class="tip">
+            <span>你也能发这样的图文</span>
+        </div>
+        <div class="right-wapper">
+            <a href="javascript:;" class="btn download-btn" id="J_openApp">立即打开</a>
+        </div>
+        <button id="J_downloadBarCloseBtn" class="tj-icon-btn close-btn">
+            <span class="fa remove"></span>
+        </button>
+    </div>
+</div>
+
+<!--  图文找不到，提示 -->
+<div id="J_notwaltlas" class="tujia hide">
+    <div id="J_content" class="content">
+        <img src="http://shangjia.tujiamedia.com/o_1b2nlk2rb1u1s4btg5932v1j27n.png">
+        <span>图文未找到</span>
+        <p>您查看的图文不存在，或已被用户删除</p>
+    </div>
+    <!-- <footer><a href="#">了解更多信息</a></footer> -->
+</div>
+
+<!-- 举报弹出层 -->
+<div id="J_dialog" class="wapper-dialog hide">
+    <div class="show-dialog">
+        <h1></h1>
+        <p id="J_click">确定</p>
+    </div>
+</div>
+
+<!-- 浏览大图 -->
+<div id="slideView" class="slide-view"></div>
+{{#section 'jscodelink'}}
+    <script type="text/javascript">
+    (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.match(/micromessenger/i) == 'micromessenger') {
+            var wxjs = document.createElement("script");
+            wxjs.setAttribute("type", "text/javascript");
+            wxjs.setAttribute("src", "http://res.wx.qq.com/open/js/jweixin-1.0.0.js");
+            document.body.appendChild(wxjs);
+        };
+    }());
+    </script>
+    <script src="js/lib/zepto/zepto.min.js"></script>
+    <script src="js/customlink.js"></script>
+{{/section}}
